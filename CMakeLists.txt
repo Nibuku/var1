@@ -18,8 +18,8 @@ if(MSVC)
 endif()
 
 # Объявляем библиотеку
-add_library(functions SHARED "include/functions.h" "src/functions.cc")
+add_library(functions SHARED "include/function/functions.h" "src/functions.cc" )
 target_include_directories(functions PUBLIC "include")
 
-
-
+add_executable(console "src/console.cc")
+target_link_libraries(console functions)
